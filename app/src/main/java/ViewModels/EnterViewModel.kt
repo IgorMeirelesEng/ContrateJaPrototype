@@ -24,6 +24,7 @@ class EnterViewModel :ViewModel(){
                     _enterStatus.value = "Falha no login: ${task.exception?.message}"
                     _navigateToHome.value = false
                 }
+
             }
 
     }
