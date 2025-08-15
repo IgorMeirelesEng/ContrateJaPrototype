@@ -1,5 +1,5 @@
 package ViewModels
-
+//signin
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,8 +14,8 @@ class EnterViewModel :ViewModel(){
     val navigateToHome: LiveData<Boolean> get() = _navigateToHome
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
-    fun login(email: String, senha: String){
-        auth.signInWithEmailAndPassword(email, senha)
+    fun signIn(email: String, password: String){
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener{task ->
                 if(task.isSuccessful){
                     _enterStatus.value = "Login bem-sucedido!"
@@ -27,18 +27,7 @@ class EnterViewModel :ViewModel(){
             }
 
     }
-    fun cadastro(nome: String, email: String, senha: String){
-        auth.createUserWithEmailAndPassword(email,senha)
-            .addOnCompleteListener{task ->
-                if(task.isSuccessful){
-                    _enterStatus.value = "Cadastro Realizado!"
-                    _navigateToHome.value = true
-                } else{
-                    _enterStatus.value = "Falha no cadastro: ${task.exception?.message}"
-                }
-            }
 
-    }
     fun OnNavigateToHomeComplete(){
         _navigateToHome.value = false
     }

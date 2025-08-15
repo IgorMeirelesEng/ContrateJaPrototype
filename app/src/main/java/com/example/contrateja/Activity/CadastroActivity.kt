@@ -14,10 +14,11 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.contrateja.R
 import com.example.contrateja.databinding.ActivityCadastroBinding
 import com.example.contrateja.databinding.ActivityEnterBinding
+import kotlin.getValue
 
 class CadastroActivity : AppCompatActivity() {
     lateinit var binding : ActivityCadastroBinding
-    private val cadastroViewModel: EnterViewModel by viewModels()
+    private val cadastroViewModel: CadastroViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,12 +30,12 @@ class CadastroActivity : AppCompatActivity() {
             val name = binding.etName.text.toString()
             val email= binding.etEmailCadastro.text.toString()
             val senha = binding.etSenhaCadastro.text.toString()
-            if(name.isEmpty() || email.isEmpty() && senha.isEmpty()){
-                cadastroViewModel.cadastro(name,email,senha)
-            } else{
+            if(name.isEmpty() || email.isEmpty() || senha.isEmpty()){
                 Toast.makeText(this,"Preecha todos os campos", Toast.LENGTH_SHORT).show()
+            } else{
+                cadastroViewModel.cadastro(name,email,senha)
             }
-            cadastroViewModel.enterStatus.observe(this, {
+            cadastroViewModel.cadastroStatus.observe(this, {
                 status ->
                 Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
             })
@@ -50,5 +51,7 @@ class CadastroActivity : AppCompatActivity() {
         fun navigateToEnter(view: View){
             startActivity(Intent(this, EnterActivity::class.java))
         }
+
     }
+
 }
