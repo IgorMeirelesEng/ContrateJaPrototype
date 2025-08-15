@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/top_header_background"
+
+    app:layout_constraintCircleRadius="@dimen/material_emphasis_medium"
+    tools:context=".Activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/group_39" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="60dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/white_rounded_top" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="Seja bem-vindo novamente!"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/etEmailCadastro"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/caixa_cinza"
+        android:drawableEnd="@drawable/baseline_email_24"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text=""
+        android:textColor="#000000"
+        android:textColorHint="#181717"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/image_174fundo" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="393dp"
+        android:layout_height="202dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/image_174" />
+
+    <EditText
+        android:id="@+id/etSenhaCadastro"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/caixa_cinza"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#090909"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailCadastro" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonEnter"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_fundo_preto"
+        android:text="Entrar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/etSenhaCadastro"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etSenhaCadastro"
+        app:layout_constraintTop_toBottomOf="@+id/etSenhaCadastro" />
+
+    <TextView
+        android:id="@+id/cadastreJa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/intro_string"
+        android:textColor="#000000"
+        android:textColorHint="#040404"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEnter" />
+
+    <Button
+        android:id="@+id/buttonCadastre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="532dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/cadastreJa"
+        app:layout_constraintTop_toBottomOf="@+id/cadastreJa" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

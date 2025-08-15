@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Fundo gradiente azul -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#002B5B"
+                android:endColor="#0066CC"
+                android:angle="270" />
+        </shape>
+    </item>
+
+    <!-- Curva branca sobreposta -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <pathData>
+                <!-- Aqui não dá para usar path direto, tem que usar bitmap ou vector -->
+            </pathData>
+        </shape>
+    </item>
+
+</layer-list>
