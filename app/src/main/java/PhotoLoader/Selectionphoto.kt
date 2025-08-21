@@ -1,0 +1,4 @@
+package PhotoLoader
+
+class Selectionphoto {
+}
