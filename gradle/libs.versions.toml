@@ -12,6 +12,9 @@ constraintlayout = "2.2.1"
 firebaseAuthKtx = "24.0.1"
 firebaseDatabase = "22.0.0"
 recyclerview = "1.4.0"
+viewpager2 = "1.1.0"
+cardview = "1.0.0"
+firebaseStorage = "22.0.0"
 
 
 [libraries]
@@ -26,6 +29,9 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 
 
 

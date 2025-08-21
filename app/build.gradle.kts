@@ -49,9 +49,15 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation(libs.firebase.database)
     implementation(libs.androidx.recyclerview)
-
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.androidx.cardview)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
 
 }

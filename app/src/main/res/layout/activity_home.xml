@@ -50,16 +50,18 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/imagePerfil"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
-                    app:srcCompat="@drawable/perfil_de_usuario" />
+                    android:background="@drawable/circle_backgrounf"
+                    tools:srcCompat="@tools:sample/avatars" />
 
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1">
 
                 <EditText
@@ -76,6 +78,7 @@
                     android:hint="Procurar..."
                     android:inputType="text"
                     android:padding="12dp"
+                    android:textColor="#000000"
                     android:textColorHint="#000000"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +129,7 @@
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/design_default_color_primary_variant"
                     app:layout_constraintBottom_toBottomOf="@+id/recyclerViewServPop"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/recyclerViewServPop"
@@ -177,6 +181,7 @@
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/design_default_color_primary_variant"
                     app:layout_constraintBottom_toBottomOf="@+id/recyclerViewDestaque"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -191,6 +196,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -199,7 +205,8 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -256,10 +263,10 @@
                     android:orientation="vertical">
 
                     <ImageView
-
+                        android:id="@+id/fotoUnder"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/perfildeusuario" />
+                        android:layout_height="40dp"
+                        tools:srcCompat="@tools:sample/avatars" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.bottomnavigation.BottomNavigationView>

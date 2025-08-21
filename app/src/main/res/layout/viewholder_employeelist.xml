@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/btn_gradiente"
+    android:padding="12dp">
+
+    <!-- Foto do profissional -->
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="Foto do profissional"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/nameFunc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Nome do profissional -->
+    <TextView
+        android:id="@+id/nameFunc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textColor="#EFEFEF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ratingFunc"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/imageView9"
+        app:layout_constraintTop_toTopOf="@id/imageView9" />
+
+    <!-- Rating -->
+    <TextView
+        android:id="@+id/ratingFunc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5.0"
+        android:textColor="#F6F4F4"
+        android:textStyle="bold|italic"
+        app:drawableStartCompat="@drawable/estrela"
+        app:layout_constraintBaseline_toBaselineOf="@id/nameFunc"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Profissão -->
+    <TextView
+        android:id="@+id/nomeProfissaolist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Profissão"
+        android:textColor="#908D8D"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView9"
+        app:layout_constraintTop_toBottomOf="@id/nameFunc" />
+
+    <!-- Experiência -->
+    <TextView
+        android:id="@+id/experienciaAno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="5 anos de experiência"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView9"
+        app:layout_constraintTop_toBottomOf="@id/nomeProfissaolist" />
+
+    <!-- Botão -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/entrarPaginaFunc"
+        android:layout_width="165dp"
+        android:layout_height="48dp"
+        android:background="@drawable/btn_fundo_preto"
+        android:text="Fale com ele"
+        android:textColor="#D7D2D2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/experienciaAno" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

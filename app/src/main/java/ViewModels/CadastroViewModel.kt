@@ -22,7 +22,7 @@ class CadastroViewModel : ViewModel() {
 val database = FirebaseDatabase.getInstance().getReference("usuarios")
     val database1 = FirebaseDatabase.getInstance().getReference("funcionarios")
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
-    fun cadastro(nome: String,email: String,password: String,cpf: String,profissao: String) {
+    fun cadastro(nome: String,email: String,password: String,cpf: String,profissao: String, telephone: String, adress: String, biografia : String, experience: String, fotoUrl: String?) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -34,7 +34,12 @@ val database = FirebaseDatabase.getInstance().getReference("usuarios")
                         "email" to email,
                         "password" to password,
                         "cpf" to cpf,
-                        "profissao" to profissao
+                        "profissao" to profissao,
+                        "telephone" to telephone,
+                        "adress" to adress,
+                        "biography" to biografia,
+                        "experience" to experience,
+                        "fotoUrl" to fotoUrl
                     )
                     database1.child(uid).setValue(dadosFunc)
                 } else {
@@ -42,7 +47,7 @@ val database = FirebaseDatabase.getInstance().getReference("usuarios")
                 }
             }
     }
-        fun cadastroUsuario(nome: String, email: String, password: String) {
+        fun cadastroUsuario(nome: String, email: String, password: String, telefone: String, adress: String, fotoUrl: String?) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -52,7 +57,11 @@ val database = FirebaseDatabase.getInstance().getReference("usuarios")
                     val dadosUsuario = mapOf (
                         "nome" to nome,
                         "email" to email,
-                        "password" to password
+                        "password" to password,
+                        "telephone" to telefone,
+                        "adress" to adress,
+                        "fotoUrl" to fotoUrl
+
 
                     )
                     database.child(uid).setValue(dadosUsuario)
