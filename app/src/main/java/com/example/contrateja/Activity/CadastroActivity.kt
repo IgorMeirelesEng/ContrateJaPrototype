@@ -40,7 +40,7 @@ class CadastroActivity : AppCompatActivity() {
 
         // Lista de profissões
         val opcoes = listOf(
-            "Pedreiro", "Pintor", "Eletricista", "Diarista, Mecânico",
+            "Pedreiro", "Pintor", "Eletricista", "Diarista", "Mecânico",
             "Fisioterapeuta", "Massagista", "Esteticista", "Cozinheiro(a)"
         )
 
@@ -103,7 +103,7 @@ class CadastroActivity : AppCompatActivity() {
             Glide.with(this)
                 .load(imageUri)
                 .centerCrop()
-                .override(500, 500) // limita tamanho
+                .override(1000, 1000) // limita tamanho
                 .into(binding.imgPerfil)
 
             // Upload da imagem para FreeImage de forma segura
