@@ -3,6 +3,7 @@ package com.example.contrateja.Activity
 import Adapter.FuncionarioAdapter
 import Domain.ProfessionalModel
 import Home.HomeActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -33,9 +34,11 @@ class EmployeeFounderActivity : AppCompatActivity() {
             for (child in snapshot.children) {
                 val func = child.getValue(ProfessionalModel::class.java)
                 if (func != null && func.profissao == profissao) {
+                    func.uid = child.key ?: ""   // 👈 pega a chave
                     lista.add(func)
                 }
             }
+
 
             binding.progressBar.visibility = View.GONE
 
@@ -48,8 +51,9 @@ class EmployeeFounderActivity : AppCompatActivity() {
             }
 
             binding.listEmployeeView.adapter = FuncionarioAdapter(lista) { funcionario ->
-                Toast.makeText(this, "Clicou em ${funcionario.nome}", Toast.LENGTH_SHORT).show()
-                // Aqui você pode abrir detalhes do profissional, se quiser
+                val intent = Intent(this, FuncionarioMainActivity::class.java)
+                intent.putExtra("employee_uid", funcionario.uid)
+                startActivity(intent)
             }
         }.addOnFailureListener {
             binding.progressBar.visibility = View.GONE

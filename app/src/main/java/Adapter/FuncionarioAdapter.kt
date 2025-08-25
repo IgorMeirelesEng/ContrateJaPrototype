@@ -28,9 +28,10 @@ class FuncionarioAdapter(
                 .circleCrop()
                 .into(binding.imageView9)
 
-            binding.entrarPaginaFunc.setOnClickListener {
+            binding.root.setOnClickListener {
                 onItemClick(item)
             }
+
         }
     }
 

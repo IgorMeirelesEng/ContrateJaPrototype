@@ -1,14 +1,17 @@
 package Adapter
 
 import Domain.ProfessionalModel
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.contrateja.Activity.FuncionarioMainActivity
 import com.example.contrateja.databinding.ViewholderDestaquesBinding
 
 class FuncionarioHomeAdapter(
-    private val funcionarios: List<ProfessionalModel>
+    private val funcionarios: List<ProfessionalModel>,
+    private val onItemClick: (ProfessionalModel) -> Unit
 ) : RecyclerView.Adapter<FuncionarioHomeAdapter.FuncionarioViewHolder>() {
 
     inner class FuncionarioViewHolder(val binding: ViewholderDestaquesBinding) :
@@ -22,6 +25,14 @@ class FuncionarioHomeAdapter(
                 .load(funcionario.fotoUrlCorrigida)
                 .placeholder(com.example.contrateja.R.drawable.outline_account_circle_24)
                 .into(binding.imageView8)
+
+            // clique no card
+            binding.root.setOnClickListener {
+                val context = binding.root.context
+                val intent = Intent(context, FuncionarioMainActivity::class.java)
+                intent.putExtra("employee_uid", funcionario.uid)  // 👈 chave do Firebase
+                context.startActivity(intent)
+            }
         }
     }
 
