@@ -5,7 +5,9 @@ class ProfessionalModel(
     val nome: String = "",
     val profissao: String = "",
     val experience: String = "",
-    val fotoUrl: String = ""
+    val fotoUrl: String = "",
+    val adress: String = "",
+    val biography: String = ""
 ) {
     val fotoUrlCorrigida: String
         get() = fotoUrl.replace("\\/", "/") // corrige \/ para /

@@ -1,5 +1,6 @@
 package com.example.contrateja.Activity
 
+import Domain.ProfessionalModel
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -23,20 +24,22 @@ class FuncionarioMainActivity : AppCompatActivity() {
         if (!uid.isNullOrEmpty()) {
             val dbRef = FirebaseDatabase.getInstance().getReference("funcionarios").child(uid)
             dbRef.get().addOnSuccessListener { snapshot ->
-                val funcionario = snapshot.getValue(ProfessionalMainPageModel::class.java)
+                val funcionario = snapshot.getValue(ProfessionalModel::class.java)
                 if (funcionario != null) {
                     binding.txtNome.text = funcionario.nome
                     binding.txtProf.text = funcionario.profissao
                     binding.txtExperience.text = "${funcionario.experience} anos de experiência"
                     binding.txtAddress.text = funcionario.adress
                     binding.txtBiography.text = funcionario.biography
+
                     Glide.with(this)
                         .load(funcionario.fotoUrlCorrigida)
                         .placeholder(R.drawable.outline_account_circle_24)
-                        .into(binding.imageView13) // <- Glide agora usa o binding correto
+                        .into(binding.imageView13)
                 }
             }
         }
+
     }
 }
 

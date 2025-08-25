@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.contrateja.Activity.EmployeeFounderActivity
+import com.example.contrateja.Activity.FuncionarioMainActivity
 import com.example.contrateja.R
 import com.example.contrateja.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -45,7 +46,12 @@ class HomeActivity : AppCompatActivity() {
         initCategory()
         txtOla = findViewById(R.id.txtOla)
 
-        adapter = FuncionarioHomeAdapter(listafuncionario)
+        adapter = FuncionarioHomeAdapter(listafuncionario) { funcionario ->
+            val intent = Intent(this, FuncionarioMainActivity::class.java)
+            intent.putExtra("employee_uid", funcionario.uid)
+            startActivity(intent)
+        }
+
         binding.recyclerViewDestaque.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewDestaque.adapter = adapter
@@ -168,7 +174,10 @@ class HomeActivity : AppCompatActivity() {
                 listafuncionario.clear()
                 for (child in snapshot.children) {
                     val f = child.getValue(ProfessionalModel::class.java)
-                    if (f != null) listafuncionario.add(f)
+                    if (f != null) {
+                        f.uid = child.key ?: ""   // 👈 pega a chave do Firebase
+                        listafuncionario.add(f)
+                    }
                 }
                 adapter.notifyDataSetChanged()
                 binding.progressBar2.visibility = View.GONE
